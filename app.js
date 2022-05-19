@@ -1,7 +1,6 @@
 const express = require('express')
 const mongoose = require("mongoose")
 const cors = require('cors')
-require('dotenv').config()
 const catRouter = require('./router/catRouter')
 const postRouter = require('./router/postRouter')
 const userRouter = require('./router/userRouter')
