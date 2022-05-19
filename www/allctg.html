@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Mohiuddin" content="">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
+    <!-- fontawsome icon -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/font-awesome.min.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <style>
+        #alert , #alert2 {
+            display: none;
+        }
+    </style>
+  </head>
+
+  <body>
+    <!-- modal box -->
+    <!-- delete modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+              <h5>Are You sure Delete ?</h5>
+              <input type="hidden" id="catId" value="#" >
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+              <button type="button" id="deleteSubmit" class="btn btn-danger" data-dismiss="modal">Yes </button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- end delete -->
+    <!-- eidt modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <input type="hidden" id="catId" value="#" >
+
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Category Name</label>
+                  <input type="text" class="form-control" id="catName" value="" >
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" id="up-btn" data-dismiss="modal" class="btn btn-primary">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- end edit modal -->
+      <!-- end modal box -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+               <div class="navbar-wrapper">
+                   <div class="navbar-logo">
+                       <a class="mobile-menu" id="mobile-collapse" href="#!">
+                           <i class="ti-menu"></i>
+                       </a> 
+                       <a href="dashboard.html">
+                           <!-- <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo" /> -->
+                           <h5>Admin Panel</h5>
+                       </a>
+                       <a class="mobile-options">
+                           <i class="ti-more"></i>
+                       </a>
+                   </div>
+
+                   <div class="navbar-container container-fluid">
+                       <ul class="nav-left">
+                           <li>
+                               <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                           </li>
+                       </ul>
+                       <ul class="nav-right">
+                           <li class="user-profile header-notification">
+                               <a href="#!">
+                                   <span>👮 Admin</span>
+                                   <i class="ti-angle-down"></i>
+                               </a>
+                               <ul class="show-notification profile-notification">
+                                   
+                                   <li>
+                                       <a href="index.html">
+                                       <i class="ti-layout-sidebar-left"></i> Logout
+                                   </a>
+                                   </li>
+                               </ul>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+           </nav>
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Layout</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="active">
+                                    <a href="dashboard.html">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Manage Category</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="add-ctg.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Category</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>  
+                                        <li class=" ">
+                                            <a href="allctg.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">All Category</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Manage Post</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="add-post.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Post</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>  
+                                        <li class=" ">
+                                            <a href="allpost.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">All Post</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+
+                                    <div class="page-body">
+                                      <div class="row">
+
+                                            <div class="col-sm-12">
+
+                                                <div id="alert" class=" text-justify alert alert-success alert-dismissible fade show" role="alert">
+                                                    Post Delete successfully
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+
+                                                <div id="alert2" class=" text-justify alert alert-success alert-dismissible fade show" role="alert">
+                                                    Post updated successfully
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="card">
+                                                    <div class="table-responsive">
+                                                        <table class="table text-center table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-center">SL No</th>
+                                                                    <th class="text-center">Category Name</th>
+                                                                    <th class="text-center">Action</th> 
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="d-data">
+                                                                
+                                                            </tbody>
+
+                                                            
+                                                            
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Required Jquery -->
+<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="assets/js/pcoded.min.js"></script>
+<script src="assets/js/vartical-demo.js"></script>
+<script src="/js/allcat.js"></script>
+<!-- Custom js -->
+<script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Mohiuddin" content="">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/themify-icons/themify-icons.css">
+    <!-- fontawsome icon -->
+    <link rel="stylesheet" type="text/css" href="assets/icon/font-awesome.min.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <style>
+        #alert{
+            display: none;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+               <div class="navbar-wrapper">
+                   <div class="navbar-logo">
+                       <a class="mobile-menu" id="mobile-collapse" href="#!">
+                           <i class="ti-menu"></i>
+                       </a> 
+                       <a href="dashboard.html">
+                           <!-- <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo" /> -->
+                           <h5>Admin Panel</h5>
+                       </a>
+                       <a class="mobile-options">
+                           <i class="ti-more"></i>
+                       </a>
+                   </div>
+
+                   <div class="navbar-container container-fluid">
+                       <ul class="nav-left">
+                           <li>
+                               <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                           </li>
+                       </ul>
+                       <ul class="nav-right">
+                           <li class="user-profile header-notification">
+                               <a href="#!">
+                                   <span>👮 Admin</span>
+                                   <i class="ti-angle-down"></i>
+                               </a>
+                               <ul class="show-notification profile-notification">
+                                   
+                                   <li>
+                                       <a href="index.html">
+                                       <i class="ti-layout-sidebar-left"></i> Logout
+                                   </a>
+                                   </li>
+                               </ul>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+           </nav>
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Layout</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="active">
+                                    <a href="dashboard.html">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Manage Category</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="add-ctg.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Category</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>  
+                                        <li class=" ">
+                                            <a href="allctg.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">All Category</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                        <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Manage Post</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="add-post.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Post</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>  
+                                        <li class=" ">
+                                            <a href="allpost.html">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">All Post</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+
+                                    <div class="page-body">
+                                      <div class="row">
+
+                                            <div class="col-sm-12">
+                                                <!-- Basic Form Inputs card start -->
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h4>Add Post</h4>
+                                                        <div class="card-header-right"><i
+                                                            class="icofont icofont-spinner-alt-5"></i></div>
+
+                                                            <div class="card-header-right">
+                                                                <i class="icofont icofont-spinner-alt-5"></i>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="card-block">
+                                                            <form action="" id="form">
+                                                                <div id="alert" class=" text-justify alert alert-success alert-dismissible fade show" role="alert">
+                                                                    Post added successfully
+                                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+
+                                                                <div class="form-group row">
+                                                                    <label class="col-sm-2 col-form-label">Post Title</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text"placeholder="Enter Your Title " id="title" class="form-control">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group row">
+                                                                    <label class="col-sm-2 col-form-label">Content</label>
+                                                                    <div class="col-sm-10">
+                                                                        <textarea rows="5" cols="5" class="form-control"
+                                                                        placeholder="Enter Your Post " id="editor" >afafaafaf</textarea>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group row">
+                                                                    <label class="col-sm-2 col-form-label">Select Category</label>
+                                                                    <div class="col-sm-10">
+                                                                        <select name="select" class="form-control" id="opt">
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                    
+
+                                                                <div class="form-group row">
+                                                                    <div class="col-sm-10">
+                                                                        <input type="submit" class="btn btn-primary" id="post_btn">
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                            </form>
+                                                        </div>                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- Required Jquery -->
+<script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="assets/js/pcoded.min.js"></script>
+<script src="assets/js/vartical-demo.js"></script>
+<!-- Custom js -->
+<script src="/js/tinymce.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+<script src="/js/addPost.js"></script>
+</body>
+
+</html>

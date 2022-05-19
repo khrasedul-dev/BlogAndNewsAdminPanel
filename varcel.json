@@ -1,0 +1,10 @@
+{
+    "version": 1,
+    "name": "newsdashboard",
+    "builds": [
+       { "src": "app.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+       { "src": "/(.*)", "dest": "/app.js" }
+    ]
+ }
